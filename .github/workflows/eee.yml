@@ -4,10 +4,13 @@ on:
   push:
 
 jobs:
-  - name: eee
-    runs-on: ubuntu-latest
-    run: wget -O hello.eee 'https://crx.goguardian.com/extension-m-4.0.6940.1-stable-crx2.crx'
-  - name: upload le artifact
-    uses: actions/upload-artifact@v4.3.1
-    with:
-      path: hello.eee
+    draft:
+      name: Draft
+      runs-on: ubuntu-latest
+      steps:
+      - name: eee
+        run: wget -O hello.eee 'https://crx.goguardian.com/extension-m-4.0.6940.1-stable-crx2.crx'
+      - name: upload le artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          path: hello.eee
